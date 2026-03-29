@@ -1,0 +1,51 @@
+?Djm7i&7S4Xz*#U
+
+bunx prisma studio
+
+//password and email for Admin
+
+{
+  "email": "admin@esharq.com",
+  "password": "Admin123!"
+}
+
+
+{
+  "data": {
+    "id": "ba13bfbd-4652-4e07-a248-721ad29dfb13",
+    "name": "Kiyimlar",
+    "slug": "kiyimlar",
+    "image": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400",
+    "parentId": null,
+    "createdAt": "2026-03-16T05:01:34.615Z",
+    "updatedAt": "2026-03-16T05:01:34.615Z",
+    "children": [],
+    "parent": null
+  },
+  {
+    "id": "3d22665b-c215-4f21-8e60-640ddae5129b",
+    "name": "Poyabzallar",
+    "slug": "poyabzallar",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+    "parentId": null,
+    "createdAt": "2026-03-16T05:01:58.638Z",
+    "updatedAt": "2026-03-16T05:01:58.638Z",
+    "children": [],
+    "parent": null
+  },
+  {
+    "id": "b516e790-1b3f-4f0b-9ab9-d2eabf3a52ad",
+    "name": "Aksessuarlar",
+    "slug": "aksessuarlar",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+    "parentId": null,
+    "createdAt": "2026-03-16T05:02:32.559Z",
+    "updatedAt": "2026-03-16T05:02:32.559Z",
+    "children": [],
+    "parent": null
+  }
+}
+
+
+
+ 

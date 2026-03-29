@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"useCallback\\\\|useMemo\\\\|React.memo\" /d/projekts/Maryam/Ecomers/src/**/*.tsx)",
+      "WebFetch(domain:images.unsplash.com)"
+    ]
+  }
+}

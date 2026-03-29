@@ -1,0 +1,12 @@
+{
+  "name": "maryam-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:admin": "npm run dev --workspace=apps/admin",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:ecommerce": "npm run dev --workspace=apps/ecommerce"
+  }
+}
