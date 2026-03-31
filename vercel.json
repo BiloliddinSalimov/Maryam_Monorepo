@@ -1,7 +1,6 @@
 {
-  "framework": "nextjs",
-  "buildCommand": "pnpm --filter ecommerce build",
-  "outputDirectory": "apps/ecommerce/.next",
+  "buildCommand": "turbo build --filter=ecommerce",
   "installCommand": "pnpm install",
-  "devCommand": "pnpm --filter ecommerce dev"
+  "devCommand": "turbo dev --filter=ecommerce",
+  "framework": "nextjs"
 }
