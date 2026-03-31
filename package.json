@@ -1,12 +1,16 @@
 {
   "name": "maryam-monorepo",
   "private": true,
+  "packageManager": "pnpm@10.33.0",
   "workspaces": [
     "apps/*"
   ],
   "scripts": {
-    "dev:admin": "npm run dev --workspace=apps/admin",
-    "dev:backend": "npm run dev --workspace=apps/backend",
-    "dev:ecommerce": "npm run dev --workspace=apps/ecommerce"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "install-all": "pnpm install"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.21"
   }
 }
