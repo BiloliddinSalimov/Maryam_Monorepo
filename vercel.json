@@ -1,6 +1,7 @@
 {
-  "installCommand": "npm install -g pnpm@8.15.4 && pnpm install",
+  "framework": "nextjs",
   "buildCommand": "pnpm --filter ecommerce build",
-  "outputDirectory": "apps/ecommerce/dist",
-  "framework": "vite"
+  "outputDirectory": "apps/ecommerce/.next",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm --filter ecommerce dev"
 }
