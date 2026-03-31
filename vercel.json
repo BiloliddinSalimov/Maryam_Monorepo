@@ -1,0 +1,7 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "pnpm --filter ecommerce build",
+  "outputDirectory": "apps/ecommerce/.next",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm --filter ecommerce dev"
+}
