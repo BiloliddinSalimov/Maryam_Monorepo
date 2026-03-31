@@ -24,7 +24,11 @@ const app = new Elysia()
   .use(cors())
 
   // ─── Upload test sahifasi ─────────────────────────────────────────────────
-  .get("/upload-ui", () => new Response(`<!DOCTYPE html>
+  .get(
+    "/upload-ui",
+    () =>
+      new Response(
+        `<!DOCTYPE html>
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
@@ -94,7 +98,10 @@ const app = new Elysia()
     }
   </script>
 </body>
-</html>`, { headers: { "Content-Type": "text/html" } }))
+</html>`,
+        { headers: { "Content-Type": "text/html" } },
+      ),
+  )
 
   // ─── Static files — yuklangan rasmlarni serve qilish ─────────────────────
   .get("/uploads/:filename", ({ params }) => {
@@ -125,20 +132,47 @@ const app = new Elysia()
           { name: "Admin Auth", description: "Admin login" },
           { name: "Admin Upload", description: "Rasm yuklash" },
           { name: "User", description: "Foydalanuvchi profili" },
-          { name: "Products", description: "Mahsulotlar (barcha foydalanuvchilar)" },
-          { name: "Admin Products", description: "Mahsulotlar boshqaruvi (admin)" },
-          { name: "Categories", description: "Kategoriyalar (barcha foydalanuvchilar)" },
-          { name: "Admin Categories", description: "Kategoriyalar boshqaruvi (admin)" },
+          {
+            name: "Products",
+            description: "Mahsulotlar (barcha foydalanuvchilar)",
+          },
+          {
+            name: "Admin Products",
+            description: "Mahsulotlar boshqaruvi (admin)",
+          },
+          {
+            name: "Categories",
+            description: "Kategoriyalar (barcha foydalanuvchilar)",
+          },
+          {
+            name: "Admin Categories",
+            description: "Kategoriyalar boshqaruvi (admin)",
+          },
           { name: "Basket", description: "Savat — JWT talab qiladi" },
           { name: "Wishlist", description: "Sevimlilar — JWT talab qiladi" },
           { name: "Orders", description: "Buyurtmalar — JWT talab qiladi" },
-          { name: "Admin Orders", description: "Buyurtmalar boshqaruvi (admin)" },
+          {
+            name: "Admin Orders",
+            description: "Buyurtmalar boshqaruvi (admin)",
+          },
           { name: "Banners", description: "Bannerlar" },
-          { name: "Admin Banners", description: "Bannerlar boshqaruvi (admin)" },
+          {
+            name: "Admin Banners",
+            description: "Bannerlar boshqaruvi (admin)",
+          },
           { name: "Homepage", description: "Bosh sahifa (public)" },
-          { name: "Admin Homepage", description: "Bosh sahifa section boshqaruvi (admin)" },
-          { name: "Admin Languages", description: "Til va tarjimalar boshqaruvi (admin)" },
-          { name: "Admin Gallery", description: "Rasm galereyasi boshqaruvi (admin)" },
+          {
+            name: "Admin Homepage",
+            description: "Bosh sahifa section boshqaruvi (admin)",
+          },
+          {
+            name: "Admin Languages",
+            description: "Til va tarjimalar boshqaruvi (admin)",
+          },
+          {
+            name: "Admin Gallery",
+            description: "Rasm galereyasi boshqaruvi (admin)",
+          },
         ],
         components: {
           securitySchemes: {
@@ -150,7 +184,7 @@ const app = new Elysia()
           },
         },
       },
-    })
+    }),
   )
 
   // ─── Error handler ─────────────────────────────────────────────────────────
@@ -165,10 +199,19 @@ const app = new Elysia()
       return json({ message: "Bu yo'l mavjud emas!" }, 404);
     }
     if (code === "VALIDATION") {
-      return json({ message: "Ma'lumotlar noto'g'ri!", detail: error.message }, 422);
+      return json(
+        { message: "Ma'lumotlar noto'g'ri!", detail: error.message },
+        422,
+      );
     }
     if (code === "PARSE") {
-      return json({ message: "JSON formati noto'g'ri! Vergul yoki tirnoq xatosini tekshiring." }, 400);
+      return json(
+        {
+          message:
+            "JSON formati noto'g'ri! Vergul yoki tirnoq xatosini tekshiring.",
+        },
+        400,
+      );
     }
     if (error instanceof AppError) {
       return json({ message: error.message }, error.statusCode);
@@ -187,11 +230,20 @@ const app = new Elysia()
       return json({ message: `DB xatosi: ${error.message}` }, 400);
     }
     if (error instanceof Prisma.PrismaClientValidationError) {
-      return json({ message: "DB ga noto'g'ri ma'lumot yuborildi!", detail: error.message }, 400);
+      return json(
+        {
+          message: "DB ga noto'g'ri ma'lumot yuborildi!",
+          detail: error.message,
+        },
+        400,
+      );
     }
 
     console.error("❌ Server xatosi:", error);
-    return json({ message: "Ichki server xatosi!", detail: String(error) }, 500);
+    return json(
+      { message: "Ichki server xatosi!", detail: String(error) },
+      500,
+    );
   })
 
   // ─── Routes ───────────────────────────────────────────────────────────────
@@ -213,10 +265,10 @@ const app = new Elysia()
     message: "Ecommerce Backend ishlayapti! 🚀",
     status: "ok",
     version: "1.0.0",
-    docs: "http://localhost:3000/docs",
+    docs: "http://localhost:5000/docs",
   }))
 
-  .listen(3000);
+  .listen(5000);
 
 console.log(`🚀 Server    : http://localhost:${app.server?.port}`);
 console.log(`📖 Swagger   : http://localhost:${app.server?.port}/docs`);
