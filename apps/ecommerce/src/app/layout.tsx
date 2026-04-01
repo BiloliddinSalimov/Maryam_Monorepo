@@ -4,15 +4,20 @@ import { Providers } from './providers';
 import { Navbar } from '@/components/Navbar';
 import { CartDrawer } from '@/components/CartDrawer';
 import { MobileBottomBar } from '@/components/MobileBottomBar';
+import favicon from '../../public/svg/favicon.svg'
+import { Instagram } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'MARYAM — Luxury Fashion',
+  title: 'MARYAM',
   description: 'Redefining high fashion with a minimalist touch. Quality, elegance, and timeless design.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href={favicon.src} />
+      </head>
       <body>
         <Providers>
           <main className="min-h-screen bg-brand-cream pb-32 md:pb-0">
@@ -48,7 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-brand-black/5 flex justify-between items-center">
                 <p className="text-[8px] uppercase tracking-widest text-brand-black/40">© 2026 MARYAM FASHION. ALL RIGHTS RESERVED.</p>
                 <div className="flex gap-4">
-                  <div className="w-6 h-4 bg-brand-black/10 rounded-sm" />
+                  <div className="w-6 h-4 bg-brand-black/10 rounded-sm">
+                  </div>
                   <div className="w-6 h-4 bg-brand-black/10 rounded-sm" />
                   <div className="w-6 h-4 bg-brand-black/10 rounded-sm" />
                 </div>

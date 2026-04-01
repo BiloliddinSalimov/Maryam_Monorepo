@@ -17,15 +17,15 @@ export const CategoryGrid = () => {
 
   return (
     <section className="py-24 px-8 max-w-screen-2xl mx-auto">
-      <div className="flex justify-between items-end mb-12">
-        <div>
-          <span className="text-[10px] uppercase tracking-[0.4em] text-black/40 mb-2 block">Shop by Category</span>
-          <h2 className="text-5xl font-display uppercase tracking-tight">The <span className="italic">Collections</span></h2>
+     <div className="flex justify-between items-end mb-12">
+          <div>
+            <h2 className="text-4xl font-display mb-2">Categories</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-brand-black/60">Selected for you</p>
+          </div>
+          <button className="text-[10px] uppercase tracking-widest border-b border-brand-black pb-1 hover:opacity-50 transition-opacity">
+            View All
+          </button>
         </div>
-        <Link href="/category/clothing" className="text-[11px] uppercase tracking-widest border-b border-black pb-1 hover:opacity-50 transition-all">
-          View all categories
-        </Link>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 h-auto lg:h-[900px]">
         {categories.map((cat, i) => (

@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import Showcase from "../../public/images/showcase.png"
 
 export const HeroSection = () => {
   const { t } = useTranslation();
@@ -14,8 +16,8 @@ export const HeroSection = () => {
         transition={{ duration: 1.5, ease: 'easeOut' }}
         className="absolute inset-0"
       >
-        <img
-          src="https://www.marthastewart.com/thmb/NDl4VVAvQZgsFTsfqsyYrh4MVHk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/smart-ways-to-elevate-closet-accessories-1023-1dbddc68f0834ec5b53001102769d8f6.jpg"
+        <Image
+          src={Showcase}
           alt="High Fashion"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
